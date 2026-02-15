@@ -2,9 +2,12 @@ const list = document.querySelector("ul");
 const buttonShowAll = document.querySelector(".show-all");
 const buttonNewPrice = document.querySelector(".new-price");
 const buttonSumAll = document.querySelector(".sum-all");
-const filter = document.querySelector(".filter");
+const buttonFilter = document.querySelector(".filter");
 
-
+function formatCurrency(value) {
+    const newValue = value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+    return newValue
+}
 function showAll(productArray) {
     let myLi = ""
     productArray.forEach((option) => {
@@ -12,7 +15,7 @@ function showAll(productArray) {
         <li>
             <img src=${option.src} alt="${option.name}">
                 <p>${option.name}</p>
-                <p class="item-price">R$ ${option.price.toFixed(2)}</p>
+                <p class="item-price"> ${formatCurrency(option.price)}</p>
         </li>
     `
     })
@@ -29,16 +32,21 @@ function porcentage10() {
 }
 
 function sumAllPrices() {
-    myLi = ""
     const sum = menuOptions.reduce((acc, curr) => acc + curr.price, 0)
-    myLi += `
+    list.innerHTML = `
         <li>
-            <p> A soma de todos os lanches é de R$ ${sum.toFixed(2)}</p>
+            <p> A soma de todos os lanches é de  ${formatCurrency(sum)}</p>
         </li>
     `
-    list.innerHTML = myLi
+}
+
+function filterProducts() {
+    const filteredProducts = menuOptions.filter((product) => product.vegan)
+
+    showAll(filteredProducts)
 }
 
 buttonShowAll.addEventListener("click", () => showAll(menuOptions))
 buttonNewPrice.addEventListener("click", porcentage10)
 buttonSumAll.addEventListener("click", sumAllPrices)
+buttonFilter.addEventListener("click", filterProducts)
