@@ -1,9 +1,8 @@
 const menuOptions = [
-    { name: "x-Salada", price: 30, vegan: false, src: "assets/x-salada.jpg" },
-    { name: "x-Bacon", price: 34, vegan: false, src: "assets/x-bacon.jpg" },
-    { name: "x-Bacon Egg", price: 39, vegan: false, src: "assets/x-bacon-egg.jpg" },
-    { name: "Monstruoso", price: 50, vegan: false, src: "assets/x-burger.jpg" },
-    { name: "Big Vegano", price: 55, vegan: true, src: "assets/x-vegano.jpg" },
-    { name: "x-Vegan", price: 45, vegan: true, src: "assets/x-vegano-supreme.jpg" }
-
+    { name: "X-Salada", price: 30, vegan: false, src: "./assets/xsalada.jpeg"},
+    { name: "X-Bacon", price: 34, vegan: false, src: "./assets/xbacon.png" },
+    { name: "X-Bacon Egg", price: 39, vegan: false, src: "./assets/bacon-egg.png" },
+    { name: "Monstruoso", price: 50, vegan: false, src: "./assets/monstruoso.png" },
+    { name: "Big Vegano", price: 55, vegan: true, src: "./assets/monstruoso-vegan.png"},
+    { name: "X-Vegan", price: 45, vegan: true, src: "./assets/xvegan.png" },
 ]
